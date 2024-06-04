@@ -1,0 +1,19 @@
+.product_info {
+  margin-top: 20px;
+}
+.product_img {
+  cursor: pointer;
+}
+.product_plus {
+  padding: 5px;
+  background-color: #10172a;
+  color: white;
+  border-radius: 50%;
+  user-select: none;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .product_name {
+    font-size: 1rem !important;
+  }
+}

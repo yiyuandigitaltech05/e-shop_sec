@@ -1,0 +1,53 @@
+.hero_section {
+  padding: 4rem 0rem;
+  background-color: var(--primary-color);
+}
+.hero_subtitle {
+  color: white;
+}
+.trending_products {
+  padding: 4rem 0rem;
+}
+.hero_title {
+  margin: 1rem 0rem 0.5rem;
+  color: white;
+}
+.hero_text {
+  color: white;
+  margin: 0.5rem 0rem 1rem;
+}
+.best_sales {
+  padding: 4rem 0rem;
+}
+.countDown {
+  background-color: var(--primary-color);
+  padding: 2rem;
+}
+.countDown img {
+  height: 100%;
+  max-height: 300px;
+}
+.clock_buy {
+  /* color: black; */
+  padding: 10px 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: #e5e5e5;
+  width: fit-content;
+  margin: 1rem 0rem;
+}
+.clock_buy a {
+  color: rgb(21 16 16 / 51%);
+}
+.NewArrival {
+  padding: 4rem 0rem;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .hero_title {
+    font-size: 1.5rem !important;
+  }
+  .hero_text {
+    font-size: 1rem;
+    text-align: left;
+  }
+}

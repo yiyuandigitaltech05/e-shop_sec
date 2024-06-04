@@ -1,0 +1,14 @@
+.common__Section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../public/image/product_Pic.png") no-repeat center center;
+  background-size:cover;
+  height: 300px;
+  padding: 100px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.common__Section h1 {
+  color: white;
+  font-weight: 600;
+}

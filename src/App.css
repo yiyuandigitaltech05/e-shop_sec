@@ -1,0 +1,33 @@
+:root {
+  --black: rgb(42, 43, 42);
+  --DarkGreen: #706c61;
+  --whiteGray: #ddcecd;
+  --DarkGreen: #5ec2b7;
+  --Tiffany: #75dddd;
+  --primary-color:#081834;
+}
+body {
+  letter-spacing: 1.2px;
+}
+h1 {
+  font-size: 2.5rem !important;
+}
+h2 {
+  font-size: 2rem !important;
+}
+h3 {
+  font-size: 1.75rem !important;
+}
+h4 {
+  font-size: 1.5rem !important;
+}
+h5 {
+  font-size: 1.25rem !important;
+}
+h6 {
+  font-size: 1rem !important;
+}
+.section_title {
+  font-weight: 600;
+  color: black;
+}

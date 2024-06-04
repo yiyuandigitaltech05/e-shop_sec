@@ -1,0 +1,20 @@
+.service {
+  padding: 4rem 0rem;
+}
+.service_item {
+  cursor: pointer;
+}
+.service_text {
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .service_card {
+    padding: 0.5rem 1rem !important;
+  }
+  .service_card h6 {
+    font-size: 0.8rem !important;
+  }
+  .service_card p {
+    font-size: 0.7rem !important;
+  }
+}

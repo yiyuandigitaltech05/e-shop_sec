@@ -1,0 +1,32 @@
+.logo_text {
+  color: rgba(255, 255, 255, 0.537);
+}
+.footer_declare {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.537);
+  margin-top: 50px;
+}
+footer {
+  background-color: var(--primary-color);
+  padding: 2rem 0rem;
+}
+.footer_quick-links ul li {
+  background-color: transparent !important;
+}
+.footer_quick-links ul li a {
+  color: rgba(255, 255, 255, 0.537);
+}
+.footer_quick-links span {
+  color: rgba(255, 255, 255, 0.537);
+}
+.footer_quick-links p {
+  color: rgba(255, 255, 255, 0.537);
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .quick_links-title {
+    font-size: 1.3rem !important;
+  }
+  .footer_quick-links ul li a {
+    font-size: 0.8rem !important;
+  }
+}
