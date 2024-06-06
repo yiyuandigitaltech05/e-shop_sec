@@ -1,5 +1,5 @@
 .shop_wrap{
-    padding: 4rem 0rem;
+    padding: 4rem 0rem 0rem;
 }
 .filter_widget select{
     padding: 10px 20px;
@@ -37,4 +37,16 @@
 }
 .shop_product_wrap{
     padding: 4rem 0rem;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .filter_widget{
+        margin-bottom: 30px;
+    }
+    .filter_widget select option{
+        font-size: .8rem;
+    }
+    .filter_widget select{
+        font-size: .9rem;
+        padding: 7px 20px;
+    }
 }

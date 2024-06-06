@@ -96,7 +96,7 @@ const HomeView = () => {
               </div>
               <Clock />
 
-              <motion.button whileTap={{ scale: 1.2 }} className="clock_buy">
+              <motion.button whileTap={{ scale: 1.2 }} className="clock_buy bg-slate-100">
                 <Link to="/shop">Visit Store</Link>
               </motion.button>
             </Col>

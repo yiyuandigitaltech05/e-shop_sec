@@ -1,0 +1,68 @@
+.clock_buy{
+    color: white;
+    background-color: var(--primary-color);
+}
+.product_details span{
+    margin: 1rem 0rem 0.5rem;
+}
+.active_tab{
+    font-weight: 600;
+}
+.tab_wrapper h6{
+    cursor: pointer;
+}
+.tab_content{
+    min-height: 100px;
+}
+.review_wrapper ul li{
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.review_wrapper ul li span{
+    color: coral;
+    font-weight: 600;
+}
+
+.review_wrapper ul li p {
+    margin-top: 10px;
+}
+.form_group svg {
+    display: inline-block;
+}
+.review_form{
+    width: 70%;
+    margin: 50px auto;
+}
+.review_form h3{
+    font-size: 1.2rem!important;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.form_group input,.form_group textarea{
+    width: 100%;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 8px 20px;
+    resize: none;
+}
+.form_group input:focus ,.form_group textarea:focus{
+    outline: none;
+} 
+.form_group{
+    margin-bottom: 30px;
+}
+.form_group span{
+    cursor: pointer;
+}
+.related_title{
+    font-size: 1.2rem!important;
+    font-weight: 600;
+}
+@media  screen and (max-width:560px){
+    .review_form{
+        width: 100%;
+        margin: 30px auto;
+    }
+}

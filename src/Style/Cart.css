@@ -1,0 +1,14 @@
+.cart_Wrap{
+    padding: 4rem 0rem;
+}
+.cart_Table tbody tr td img{
+    width: 70px!important;
+    height: 70px!important;
+    object-fit: cover;
+}
+td svg {
+    cursor: pointer;
+}
+td,th{
+    color: var(--primary-color);
+}

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Header.css";
 import { useSelector } from "react-redux";
@@ -22,6 +22,7 @@ const Header = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const headerRef = useRef(null);
   const menuRef = useRef(null);
+  const Navigate = useNavigate();
 
   const stickyHeaderFunc = () => {
     window.addEventListener("scroll", () => {
@@ -35,6 +36,11 @@ const Header = () => {
       }
     });
   };
+
+  const handleTocart =()=>{
+    Navigate("./cart")
+  }
+
 
   useEffect(() => {
     stickyHeaderFunc();
@@ -97,7 +103,7 @@ const Header = () => {
             </svg>
             <span className="badge_icon">1</span>
           </span>
-          <span className="cart_icon">
+          <span className="cart_icon" onClick={handleTocart}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
