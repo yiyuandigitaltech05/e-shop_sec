@@ -1,0 +1,23 @@
+.Checkout_Wrap{
+    padding: 4rem 0rem;
+}
+.Checkout_Wrap input{
+    width: 100%;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+.Checkout_Wrap input:focus{
+    outline: none;
+}
+.checkout__cart{
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+.checkout__cart h6 , h4{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
