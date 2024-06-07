@@ -14,9 +14,9 @@ const ProductCard = ({ item }) => {
     dispatch(
       cartActions.addItem({
         id: item.id,
-        productName: item.Product_name,
-        price: item.Product_price,
-        image: item.imageUrl,
+        productName: item.Product_name, // 修改这里
+        price: item.Product_price, // 修改这里
+        imageUrl: item.imageUrl, // 修改这里
       })
     );
 
@@ -35,7 +35,7 @@ const ProductCard = ({ item }) => {
           <span>{item.Product_category}</span>
         </div>
         <div className="prodcut_card_bottom d-flex justify-content-between align-items-center p-2">
-          <span className="price">{item.Product_price}</span>
+          <span className="price">${item.Product_price}</span>
           <motion.span
             whileTap={{ scale: 1.2 }}
             className="product_plus"
