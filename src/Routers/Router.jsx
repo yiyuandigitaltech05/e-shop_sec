@@ -7,7 +7,7 @@ import ProductDetails from "@/main/ProductDetails";
 import Shop from "@/main/Shop";
 import { Routes, Route } from "react-router-dom";
 import React from "react";
-
+ import ProtectedRoute from "./ProtectedRoute";
 const Router = () => {
   return (
     <Routes>
@@ -17,7 +17,9 @@ const Router = () => {
       <Route path="Cart" element={<Cart />} />
       <Route path="Signup" element={<Signup />} />
       <Route path="Login" element={<Login />} />
-      <Route path="Checkout" element={<Checkout />} />
+      <Route path="Checkout" element={<ProtectedRoute>
+        <Checkout />
+        </ProtectedRoute>} />
     </Routes>
   );
 };

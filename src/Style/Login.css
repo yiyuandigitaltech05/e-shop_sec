@@ -1,5 +1,15 @@
 .auth_form{
     background-color: var(--primary-color);
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
+}
+.auth_btn{
+    color: var(--primary-color)!important;
+}
+.Login_Wrap{
+    padding: 4rem 0rem;
+}
+.auth_form input[type='file']{
+    color: white;
+    cursor: pointer;
 }
