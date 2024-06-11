@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Header.css";
 import { useSelector } from "react-redux";
+import useAuth from "@/custom-hook/UseAuth";
 
 const Header = () => {
   const nav_link = [
@@ -23,6 +24,7 @@ const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
   const Navigate = useNavigate();
+  const {currentUser} = useAuth()
 
   const stickyHeaderFunc = () => {
     window.addEventListener("scroll", () => {
@@ -121,7 +123,7 @@ const Header = () => {
             <span className="badge_icon">{totalQuantity}</span>
           </span>
           <motion.span className="nav_user" whileTap={{ scale: 1.2 }}>
-            <svg
+            {currentUser? <img style={{ width: '24px' }} src={currentUser.photoURL} alt="" /> : <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -134,7 +136,7 @@ const Header = () => {
                 strokeLinejoin="round"
                 d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
               />
-            </svg>
+            </svg>}
           </motion.span>
         </div>
         <div className="hamburger" onClick={menuToggle}>
