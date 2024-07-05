@@ -1,0 +1,26 @@
+.admin__header{
+    background-color: var(--primary-color);
+}
+.admin_logo{
+    color: white;
+}
+.admin_nav-top{
+    padding: 20px;
+}
+.admin_nav-top-right{
+    display: flex;
+}
+.admin-user{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.nav_link{
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.nav_active{
+    color: white!important;
+    background-color: black!important;
+}

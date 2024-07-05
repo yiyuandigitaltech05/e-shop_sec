@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import "./Header.css";
 import { useSelector } from "react-redux";
 import useAuth from "@/custom-hook/UseAuth";
+import { signOut } from "firebase/auth";
+import { auth } from "@/firebase.config";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const nav_link = [
@@ -23,6 +26,7 @@ const Header = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const headerRef = useRef(null);
   const menuRef = useRef(null);
+  const userRef = useRef(null)
   const Navigate = useNavigate();
   const {currentUser} = useAuth()
 
@@ -44,13 +48,38 @@ const Header = () => {
   }
 
 
+  const logout =()=>{
+    signOut(auth).then(()=>{
+      toast.success('Logged out')
+      Navigate("./home")
+    }).catch(err=>{
+      toast.error(err.message)
+    })
+  }
+
+
   useEffect(() => {
     stickyHeaderFunc();
+    
+    const handleClickOutside = (event) =>{
+      if(userRef.current && !userRef.current.contains(event.target)){
+        userRef.current.classList.remove("showProfile")
+      }
+    }
 
-    return () => window.removeEventListener("scroll", stickyHeaderFunc);
+    document.addEventListener('click',handleClickOutside,true)
+
+    //  寫在這裡面的是清理函數
+    return () => {
+      window.removeEventListener("scroll", stickyHeaderFunc);
+    document.removeEventListener('click',handleClickOutside,true)
+  }
+    
   }, []);
 
   const menuToggle = () => menuRef.current.classList.toggle("active_menu");
+
+  const userProfile = () => userRef.current.classList.toggle("showProfile")
 
   return (
     <div className="container p-0" ref={headerRef}>
@@ -122,14 +151,15 @@ const Header = () => {
             </svg>
             <span className="badge_icon">{totalQuantity}</span>
           </span>
-          <motion.span className="nav_user" whileTap={{ scale: 1.2 }}>
-            {currentUser? <img style={{ width: '24px' }} src={currentUser.photoURL} alt="" /> : <svg
+          <motion.span className="nav_user" whileTap={{ scale: 1.2 }} >
+            {currentUser? <img style={{ width: '24px',height: '24px' }} src={currentUser.photoURL} alt="" onClick={userProfile}/> : <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
               className="w-6 h-6"
+              onClick={userProfile}
             >
               <path
                 strokeLinecap="round"
@@ -137,6 +167,14 @@ const Header = () => {
                 d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
               />
             </svg>}
+
+            <div className="profile_state_list gap-3" ref={userRef}>
+              {currentUser? <span onClick={logout}>Logout</span> : <div>
+                <div className="text-center"><Link to='/signup'>Signup</Link></div>
+                <div className="text-center"><Link to='Login'>Login</Link></div>
+                <div className="text-center"><Link to='/dashboard'>Dashboard</Link></div>
+              </div> }
+            </div>
           </motion.span>
         </div>
         <div className="hamburger" onClick={menuToggle}>

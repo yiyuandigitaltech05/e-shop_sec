@@ -39,7 +39,7 @@ const Login = () => {
     <section className="Login_Wrap">
       <Container>
         <Row>
-         {loading ? (<Col lg='12'><h4 className="text-center">Loading...</h4></Col>) : 
+         {loading ? (<Col lg='12' className="text-center"><h4 className="text-center">Loading...</h4></Col>) : 
          (<Col lg='6' className="m-auto text-center">
           <h3 className="fw-bold fs-4 my-2">Login</h3>
           

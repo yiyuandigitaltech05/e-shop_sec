@@ -71,8 +71,28 @@ li {
 
 .nav_user {
   cursor: pointer;
+  position: relative;
+  user-select: none;
 }
 
+.profile_state_list{
+  position: absolute;
+  top: 100%;
+  width: 150px;
+  background-color: bisque;
+  color: black;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  display: none;
+  cursor: pointer;
+
+}
+.showProfile{
+  display: flex;
+}
 .sticky_header {
   width: 100%;
   height: 80px;

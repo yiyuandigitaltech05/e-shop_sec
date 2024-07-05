@@ -1,0 +1,9 @@
+.Form_group{
+    display: flex;
+    flex-direction: column;
+}
+.Form_group input{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
