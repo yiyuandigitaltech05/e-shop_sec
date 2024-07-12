@@ -11,6 +11,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import AllProducts from "@/admin/AllProducts";
 import AddProducts from "@/admin/AddProducts";
 import Dashboard from "@/admin/Dashboard";
+import Users from "@/admin/Users";
 
 const Router = () => {
   return (
@@ -27,6 +28,7 @@ const Router = () => {
         <Route path="dashboard" element={<Dashboard/>}/>
         <Route path="dashboard/all-products" element={<AllProducts/>}/>
         <Route path="dashboard/add-products" element={<AddProducts/>}/>
+        <Route path="dashboard/users" element={<Users/>}/>
       </Route>
       
 {/*       
