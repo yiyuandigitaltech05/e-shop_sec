@@ -38,9 +38,9 @@ const cartSlice = createSlice({
         0
       );
 
-      console.log(state.totalQuantity);
-      console.log(state.cartItems);
-      console.log(newItem);
+      // console.log(state.totalQuantity);
+      // console.log(state.cartItems);
+      // console.log(newItem);
     },
     removeItem: (state, action) => {
       const id = action.payload;

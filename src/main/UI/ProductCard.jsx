@@ -14,9 +14,9 @@ const ProductCard = ({ item }) => {
     dispatch(
       cartActions.addItem({
         id: item.id,
-        productName: item.Product_name, // 修改这里
-        price: item.Product_price, // 修改这里
-        imageUrl: item.imageUrl, // 修改这里
+        productName: item.title, // 修改这里
+        price: item.price, // 修改这里
+        imageUrl: item.imgUrl, // 修改这里
       })
     );
 
@@ -24,18 +24,18 @@ const ProductCard = ({ item }) => {
   };
   return (
     <Col lg="3" md="4" className="mb-2">
-      <div className="product_item">
-        <div className="product_img">
-          <motion.img whileHover={{ scale: 0.9 }} src={item.imageUrl} alt="" />
+      <div className="product_item flex flex-column h-full">
+        <div className="product_img flex-1 flex align-items-center">
+          <motion.img whileHover={{ scale: 0.9 }} src={item.imgUrl} alt="" />
         </div>
         <div className="p-2 product_info">
           <h3 className="product_name">
-            <Link to={`/shop/${item.id}`}>{item.Product_name}</Link>
+            <Link to={`/shop/${item.id}`}>{item.title}</Link>
           </h3>
-          <span>{item.Product_category}</span>
+          <span>{item.category}</span>
         </div>
         <div className="prodcut_card_bottom d-flex justify-content-between align-items-center p-2">
-          <span className="price">${item.Product_price}</span>
+          <span className="price">${item.price}</span>
           <motion.span
             whileTap={{ scale: 1.2 }}
             className="product_plus"

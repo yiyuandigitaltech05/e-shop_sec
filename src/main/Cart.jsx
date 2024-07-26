@@ -16,7 +16,7 @@ const Cart = () => {
   const deleteItemHandler = (id) => {
     dispatch(cartActions.removeItem(id));
   };
-
+console.log(cartItems)
   return (
     <Helmen title="Cart">
       <CommonSection title="Shopping Cart" />

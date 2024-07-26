@@ -36,7 +36,7 @@ const Users = () => {
                       <td><img src={user.photoURL} alt="" width='60px' /></td>
                       <td>{user.displayName}</td>
                       <td>{user.email}</td>
-                      <td><button className='btn btn-danger' onClick={deleteUser(user.uid)} >Delete</button></td>
+                      <td><button className='btn btn-danger' onClick={()=>deleteUser(user.uid)} >Delete</button></td>
                     </tr>
                   ))
                 }

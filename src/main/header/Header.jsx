@@ -170,9 +170,9 @@ const Header = () => {
 
             <div className="profile_state_list gap-3" ref={userRef}>
               {currentUser? <span onClick={logout}>Logout</span> : <div>
-                <div className="text-center"><Link to='/signup'>Signup</Link></div>
-                <div className="text-center"><Link to='Login'>Login</Link></div>
-                <div className="text-center"><Link to='/dashboard'>Dashboard</Link></div>
+                <div className="text-center py-1"><Link to='/signup'>Signup</Link></div>
+                <div className="text-center py-1"><Link to='Login'>Login</Link></div>
+                <div className="text-center py-1"><Link to='/dashboard'>Dashboard</Link></div>
               </div> }
             </div>
           </motion.span>

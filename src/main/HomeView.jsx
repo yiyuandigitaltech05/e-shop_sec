@@ -7,34 +7,40 @@ import "@/Style/HomeView.css";
 import { motion } from "framer-motion";
 import Service from "./Service/Service";
 import ProductList from "./UI/ProductList";
-import ProductData from "@/assets/data/ProductData";
+// import ProductData from "@/assets/data/ProductData";
 import counterImg from "../../public/image/countDown.png";
 import Clock from "./UI/Clock";
 import { Link } from "react-router-dom";
 import { Scale } from "lucide-react";
+
+import useGetData from "@/custom-hook/UseGetData";
+
 
 const HomeView = () => {
   const [trendingProduct, setTrendingProduct] = useState([]);
   const [bestSales, setBestSales] = useState([]);
   const [newArrival, setNewArrival] = useState([]);
 
+  const { data:products , loading} = useGetData('products')
+
   const year = new Date().getFullYear();
 
   useEffect(() => {
-    const filteredCategory = ProductData.filter(
-      (item) => item.Product_category === "Couch"
+    console.log(products)
+    const filteredCategory = products.filter(
+      (item) => item.category === "Couch"
     );
-    const bestSalesCategory = ProductData.filter(
-      (item) => item.Product_category === "Beach"
+    const bestSalesCategory = products.filter(
+      (item) => item.category === "Beach"
     );
-    const NewArrivalCategory = ProductData.filter(
-      (item) => item.Product_category === "Mobile"
+    const NewArrivalCategory = products.filter(
+      (item) => item.category === "Mobile"
     );
 
     setTrendingProduct(filteredCategory);
     setBestSales(bestSalesCategory);
     setNewArrival(NewArrivalCategory);
-  }, []);
+  }, [products]);
   return (
     <Helmen title={"Home"}>
       <section className="hero_section">
@@ -70,7 +76,8 @@ const HomeView = () => {
             <Col lg="12" className="text-center">
               <h2 className="section_title">Trending Products</h2>
             </Col>
-            <ProductList data={trendingProduct} />
+            {loading ? <h5 className="fw-bold">Loading...</h5> : <ProductList data={trendingProduct} /> }
+            
           </Row>
         </Container>
       </section>
@@ -81,7 +88,8 @@ const HomeView = () => {
             <Col lg="12" className="text-center">
               <h2 className="section_title">Best Sales</h2>
             </Col>
-            <ProductList data={bestSales} />
+          
+            {loading ? <h5 className="fw-bold">Loading...</h5> : <ProductList data={bestSales} /> }
           </Row>
         </Container>
       </section>
@@ -115,8 +123,8 @@ const HomeView = () => {
           <Row>
             <Col lg="12" className="text-center">
               <h2 className="section_title">New Arrival</h2>
-            </Col>
-            <ProductList data={newArrival} />
+            </Col>         
+            {loading ? <h5 className="fw-bold">Loading...</h5> :   <ProductList data={newArrival} /> }
           </Row>
         </Container>
       </section>
